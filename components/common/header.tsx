@@ -40,127 +40,129 @@ export default function Header() {
 	};
 
 	return (
-		<header
-			className={`fixed top-0 left-0 w-full z-[100] border-b border-neutral-800
+		<>
+			<header
+				className={`fixed top-0 left-0 w-full z-[100] border-b border-neutral-800
 				shadow-sm shadow-neutral-900 transition-all duration-300 ease-in-out py-4 ${
 					isScrolled
 						? "bg-white/5 backdrop-blur-md border-blue-100/20"
 						: "bg-transparent"
 				}`}
-		>
-			<div className="container mx-auto px-6 flex items-center justify-between">
-				{/* 1. 로고 이미지 */}
-				<Link
-					href="/"
-					className="flex items-center gap-2 group"
-					onClick={closeMobileMenu}
-				>
-					<div className="relative w-24 h-10 overflow-hidden rounded-lg">
-						{/* 실제 로고 파일이 있다면 src를 변경해주세요. 여기선 예시 플레이스홀더를 사용합니다. */}
-						<Image
-							src="/logo_white.png" // public 폴더 내에 로고 파일 필요
-							alt="Wave Logo"
-							fill
-							className="object-cover opacity-90"
-							priority
-						/>
-					</div>
-					{/* <span className="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">
+			>
+				<div className="container mx-auto px-6 flex items-center justify-between">
+					{/* 1. 로고 이미지 */}
+					<Link
+						href="/"
+						className="flex items-center gap-2 group"
+						onClick={closeMobileMenu}
+					>
+						<div className="relative w-24 h-10 overflow-hidden rounded-lg">
+							{/* 실제 로고 파일이 있다면 src를 변경해주세요. 여기선 예시 플레이스홀더를 사용합니다. */}
+							<Image
+								src="/logo_white.png" // public 폴더 내에 로고 파일 필요
+								alt="Wave Logo"
+								fill
+								className="object-cover opacity-90"
+								priority
+							/>
+						</div>
+						{/* <span className="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">
 						Wave
 					</span> */}
-				</Link>
+					</Link>
 
-				{/* 2. 네비게이션 버튼 (데스크탑) */}
-				<nav className="hidden md:flex items-center gap-8">
-					{NAV_ITEMS.map((item) => (
-						<Link
-							key={item.label}
-							href={item.href}
-							className="text-sm font-medium text-slate-200 hover:text-cyan-400 transition-colors relative group"
-						>
-							{item.label}
-							{/* 호버 시 나타나는 하단 밑줄 애니메이션 */}
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
-						</Link>
-					))}
-				</nav>
-
-				{/* 모바일 메뉴 버튼 (반응형 대비용) */}
-				<button
-					className="md:hidden text-white hover:text-cyan-400 p-2 z-[101] relative"
-					onClick={toggleMobileMenu}
-					aria-label="Toggle mobile menu"
-				>
-					{isMobileMenuOpen ? (
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							strokeWidth={1.5}
-							stroke="currentColor"
-							className="w-6 h-6"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M6 18L18 6M6 6l12 12"
-							/>
-						</svg>
-					) : (
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							strokeWidth={1.5}
-							stroke="currentColor"
-							className="w-6 h-6"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-							/>
-						</svg>
-					)}
-				</button>
-
-				{/* 모바일 메뉴 오버레이 및 사이드바 */}
-				<AnimatePresence>
-					{isMobileMenuOpen && (
-						<>
-							{/* 백드롭 (배경 어둡게 처리 & 클릭 시 닫기) */}
-							<motion.div
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
-								transition={{ duration: 0.2 }}
-								className="fixed inset-0 bg-black/60 z-40 md:hidden"
-								onClick={closeMobileMenu}
-							/>
-
-							{/* 사이드바 (오른쪽에서 슬라이드) */}
-							<motion.div
-								initial={{ x: "100%" }}
-								animate={{ x: 0 }}
-								exit={{ x: "100%" }}
-								transition={{ type: "spring", damping: 25, stiffness: 200 }}
-								className="fixed top-0 right-0 h-full w-[70%] max-w-xs bg-neutral-900/95 backdrop-blur-xl z-50 flex flex-col items-center justify-center space-y-8 md:hidden border-l border-neutral-800 shadow-2xl"
+					{/* 2. 네비게이션 버튼 (데스크탑) */}
+					<nav className="hidden md:flex items-center gap-8">
+						{NAV_ITEMS.map((item) => (
+							<Link
+								key={item.label}
+								href={item.href}
+								className="text-sm font-medium text-slate-200 hover:text-cyan-400 transition-colors relative group"
 							>
-								{NAV_ITEMS.map((item) => (
-									<Link
-										key={item.label}
-										href={item.href}
-										onClick={closeMobileMenu}
-										className="text-xl font-medium text-slate-200 hover:text-cyan-400 transition-colors"
-									>
-										{item.label}
-									</Link>
-								))}
-							</motion.div>
-						</>
-					)}
-				</AnimatePresence>
-			</div>
-		</header>
+								{item.label}
+								{/* 호버 시 나타나는 하단 밑줄 애니메이션 */}
+								<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+							</Link>
+						))}
+					</nav>
+
+					{/* 모바일 메뉴 버튼 (반응형 대비용) */}
+					<button
+						className="md:hidden text-white hover:text-cyan-400 p-2 z-[101] relative"
+						onClick={toggleMobileMenu}
+						aria-label="Toggle mobile menu"
+					>
+						{isMobileMenuOpen ? (
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth={1.5}
+								stroke="currentColor"
+								className="w-6 h-6"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						) : (
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth={1.5}
+								stroke="currentColor"
+								className="w-6 h-6"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+								/>
+							</svg>
+						)}
+					</button>
+				</div>
+			</header>
+
+			{/* 모바일 메뉴 오버레이 및 사이드바 */}
+			<AnimatePresence>
+				{isMobileMenuOpen && (
+					<>
+						{/* 백드롭 (배경 어둡게 처리 & 클릭 시 닫기) */}
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.2 }}
+							className="fixed inset-0 bg-black/60 z-[140] md:hidden"
+							onClick={closeMobileMenu}
+						/>
+
+						{/* 사이드바 (오른쪽에서 슬라이드) */}
+						<motion.div
+							initial={{ x: "100%" }}
+							animate={{ x: 0 }}
+							exit={{ x: "100%" }}
+							transition={{ type: "spring", damping: 25, stiffness: 200 }}
+							className="fixed top-0 right-0 h-full w-[70%] max-w-xs bg-neutral-900/95 backdrop-blur-xl z-[150] flex flex-col items-center justify-center space-y-8 md:hidden border-l border-neutral-800 shadow-2xl"
+						>
+							{NAV_ITEMS.map((item) => (
+								<Link
+									key={item.label}
+									href={item.href}
+									onClick={closeMobileMenu}
+									className="text-xl font-medium text-slate-200 hover:text-cyan-400 transition-colors"
+								>
+									{item.label}
+								</Link>
+							))}
+						</motion.div>
+					</>
+				)}
+			</AnimatePresence>
+		</>
 	);
 }
