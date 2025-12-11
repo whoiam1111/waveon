@@ -38,7 +38,7 @@ export default function HeroSection() {
 						href="/about"
 						className="px-8 py-4 border border-slate-600 hover:border-blue-400 hover:text-blue-400 text-slate-300 font-medium rounded-full transition-all"
 					>
-						WAVE가 궁금해요
+						WAVE ON이 궁금해요
 					</Link>
 				</FadeIn>
 			</div>

@@ -7,8 +7,8 @@ import Image from "next/image";
 // 네비게이션 항목 정의 (유지보수를 위해 배열로 관리)
 const NAV_ITEMS = [
 	{ label: "About", href: "/about" },
-	{ label: "행사일정", href: "/schedule" },
-	{ label: "프로젝트", href: "/projects" },
+	{ label: "프로젝트", href: "/project" },
+	{ label: "히스토리", href: "/history" },
 	{ label: "문의", href: "/contact" },
 ];
 

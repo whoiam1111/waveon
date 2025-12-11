@@ -14,7 +14,7 @@ export default function JoinSection() {
 					<p className="text-slate-300 text-lg mb-12 max-w-xl mx-auto">
 						아티스트, 크리에이터, 스태프, 브랜드 컬래버까지
 						<br />
-						WAVE와 함께 새로운 파도를 만들 사람을 기다립니다.
+						WAVE ON과 함께 새로운 파도를 만들 사람을 기다립니다.
 					</p>
 
 					<div className="flex flex-col md:flex-row gap-4 justify-center">

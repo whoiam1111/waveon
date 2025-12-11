@@ -7,7 +7,7 @@ export default function IntroTeaser() {
 			<div className="container mx-auto px-6">
 				<FadeIn>
 					<h2 className="text-xl text-blue-400 font-bold mb-8 tracking-widest">
-						WAVEON은 어떤 파도를 만드나요?
+						WAVE ON은 어떤 파도를 만드나요?
 					</h2>
 					<p className="text-3xl md:text-5xl font-semibold leading-tight text-white mb-12">
 						“AI 시대에도, 우리는 여전히
@@ -24,7 +24,7 @@ export default function IntroTeaser() {
 						href="/about"
 						className="inline-block border-b-2 border-blue-500 pb-1 text-blue-500 hover:text-white hover:border-white transition-colors text-lg"
 					>
-						WAVE 스토리 보러가기 →
+						WAVE ON 스토리 보러가기 →
 					</Link>
 				</FadeIn>
 			</div>
