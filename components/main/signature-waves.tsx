@@ -22,7 +22,7 @@ const SIGNATURES = [
 
 export default function SignatureWaves() {
 	return (
-		<section className="py-24 bg-slate-900 text-white border-y border-slate-800">
+		<section className="py-24 bg-slate-900 text-white border-y border-slate-800 overflow-hidden">
 			<div className="container mx-auto px-6">
 				<FadeIn>
 					<h2 className="text-4xl font-bold mb-4">Signature Waves</h2>

@@ -33,7 +33,10 @@ export default function CurrentWaves() {
 	if (isLoading) return null; // Or a loader
 
 	return (
-		<section id="current-waves" className="py-24 bg-slate-950 text-white">
+		<section
+			id="current-waves"
+			className="py-24 bg-slate-950 text-white overflow-hidden"
+		>
 			<div className="container mx-auto px-6">
 				<FadeIn className="mb-12 flex justify-between items-end">
 					<div>

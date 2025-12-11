@@ -21,7 +21,7 @@ const ACTIVITIES = [
 
 export default function WhatWeDo() {
 	return (
-		<section className="py-24 bg-slate-950 text-white">
+		<section className="py-24 bg-slate-950 text-white overflow-hidden">
 			<div className="container mx-auto px-6">
 				<FadeIn className="mb-16 text-center md:text-left">
 					<h2 className="text-4xl font-bold mb-4">What We Do</h2>

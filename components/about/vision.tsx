@@ -4,7 +4,10 @@ import FadeIn from "../ui/fade-in";
 
 export default function Vision() {
 	return (
-		<section id="vision" className="relative py-24 px-6 bg-slate-900/50">
+		<section
+			id="vision"
+			className="relative py-24 px-6 bg-slate-900/50 overflow-hidden"
+		>
 			<div className="container mx-auto max-w-5xl">
 				<div className="grid md:grid-cols-2 gap-12 items-center">
 					<FadeIn direction="right">

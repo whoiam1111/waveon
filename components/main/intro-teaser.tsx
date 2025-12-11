@@ -3,7 +3,7 @@ import FadeIn from "../ui/fade-in";
 
 export default function IntroTeaser() {
 	return (
-		<section className="py-32 bg-slate-900 text-center">
+		<section className="py-32 bg-slate-900 text-center overflow-hidden">
 			<div className="container mx-auto px-6">
 				<FadeIn>
 					<h2 className="text-xl text-blue-400 font-bold mb-8 tracking-widest">

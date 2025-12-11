@@ -48,7 +48,7 @@ const activities = [
 
 export default function WhatWeDo() {
 	return (
-		<section className="relative py-24 px-6 bg-slate-950">
+		<section className="relative py-24 px-6 bg-slate-950 overflow-hidden">
 			<div className="container mx-auto max-w-6xl">
 				<FadeIn className="mb-16">
 					<h2 className="text-sm font-semibold tracking-widest text-blue-400 mb-2 uppercase">
