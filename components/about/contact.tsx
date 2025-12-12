@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Contact() {
 	return (
-		<section className="relative py-24 px-6 text-center">
+		<section className="relative py-24 md:py-32 px-6 text-center">
 			<div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
 
 			<FadeIn>
@@ -20,7 +20,7 @@ export default function Contact() {
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">
 					<Link
 						href="/contact"
-						className="px-20 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]"
+						className="px-24 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]"
 					>
 						문의하기
 					</Link>

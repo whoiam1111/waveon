@@ -15,10 +15,7 @@ export default function ContactPage() {
 			{/* 1. Header Hero */}
 			<ContactHeader />
 
-			{/* 2. Main Inquiry Options */}
-			<InquiryOptions />
-
-			{/* 3. General Info & Map */}
+			{/* 2. General Info */}
 			<GeneralInfo />
 		</main>
 	);
