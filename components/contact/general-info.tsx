@@ -38,7 +38,7 @@ export default function GeneralInfo() {
 					<FadeIn direction="left" delay={0.2}>
 						<div className="space-y-8">
 							<div className="flex items-center gap-6">
-								<div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-blue-400">
+								<div className="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-blue-400">
 									<Mail />
 								</div>
 								<div>
@@ -53,17 +53,17 @@ export default function GeneralInfo() {
 							</div>
 
 							<div className="flex items-center gap-6">
-								<div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-pink-400">
+								<div className="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-pink-400">
 									<Instagram />
 								</div>
 								<div>
 									<h4 className="text-white font-bold text-lg">Social</h4>
 									<a
-										href="https://instagram.com"
+										href="https://www.instagram.com/wave0n_"
 										target="_blank"
 										className="text-slate-400 hover:text-blue-400 transition-colors"
 									>
-										@waveon_official
+										@wave0n_
 									</a>
 								</div>
 							</div>
@@ -71,7 +71,7 @@ export default function GeneralInfo() {
 							{/* Info Overlay */}
 							<div className="">
 								<div className="flex items-center gap-6">
-									<div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-emerald-400">
+									<div className="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 text-emerald-400">
 										<MapPin />
 									</div>
 									<div>

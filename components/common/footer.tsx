@@ -31,7 +31,11 @@ export default function Footer() {
 							WAVE ON은 청춘의 에너지와 진짜 울림을 믿는 문화예술 크루입니다.
 						</p>
 						<div className="flex gap-4">
-							<Link href="#" className="hover:text-blue-400 transition-colors">
+							<Link
+								href="https://www.instagram.com/wave0n_"
+								target="_blank"
+								className="hover:text-blue-400 transition-colors"
+							>
 								<Instagram size={20} />
 							</Link>
 							<Link href="#" className="hover:text-blue-400 transition-colors">
