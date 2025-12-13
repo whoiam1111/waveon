@@ -2,7 +2,7 @@ import { APIEvent, APIResponseList } from "@/types/api";
 
 const API_BASE_URL =
 	"https://iphzyiiv62.execute-api.ap-northeast-2.amazonaws.com/prod/api/v1/events";
-const HOMEPAGE_NAME = "IAM"; // Temporary homepage name
+const HOMEPAGE_NAME = "WAVEON"; // Temporary homepage name
 
 export async function fetchEvents(limit?: number): Promise<APIResponseList> {
 	const url = new URL(API_BASE_URL);
