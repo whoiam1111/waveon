@@ -10,11 +10,12 @@ export default function Contact() {
 
 			<FadeIn>
 				<h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-					WAVE와 함께 <br className="md:hidden" />
+					WAVE ON과 함께 <br className="md:hidden" />
 					파도를 만들고 싶다면
 				</h2>
 				<p className="text-slate-400 mb-10 text-lg">
-					언제든 문을 두드려주세요. 새로운 파도는 언제나 환영입니다.
+					언제든 문을 두드려주세요. <br className="md:hidden" />
+					새로운 파도는 언제나 환영입니다.
 				</p>
 
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">

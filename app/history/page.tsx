@@ -60,10 +60,10 @@ export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
 						<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
 							히스토리
 						</h2>
-						<p className="text-slate-400 leading-relaxed text-lg">
-							WAVE ON이 만들어온 즐거운 파도들의 기록입니다.
+						<p className="text-slate-400 leading-relaxed md:text-lg">
+							WAVE ON이 만들어온 파도의 기록입니다.
 							<br />
-							다양한 공간에서 펼쳐진 이야기들을 만나보세요.
+							우리의 즐거운 이야기들을 만나보세요.
 						</p>
 						<div className="h-px w-24 bg-blue-500 mx-auto mt-8" />
 					</FadeIn>

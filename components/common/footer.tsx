@@ -1,17 +1,6 @@
 import Link from "next/link";
 
-// Checking package.json I saw lucide-react. I should use that or standard SVG icons to avoid dependency issues if react-icons isn't installed.
-// The package.json showed lucide-react. I'll use lucide-react.
-
-import {
-	Facebook,
-	Instagram,
-	Twitter,
-	Youtube,
-	Mail,
-	MapPin,
-	Phone,
-} from "lucide-react";
+import { Instagram, Youtube, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
 	return (
@@ -24,14 +13,13 @@ export default function Footer() {
 							<div className="relative w-64 h-14 flex items-start justify-center">
 								<img src="/logo.png" alt="Wave Logo" />
 							</div>
-							{/* <span className="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors">
-								WAVE ON
-							</span> */}
 						</Link>
 						<p className="text-sm leading-relaxed mb-6">
 							청춘의 파도를 타고, 문화를 흔들다.
 							<br />
-							WAVE ON은 청춘의 에너지와 진짜 울림을 믿는 문화예술 크루입니다.
+							<span className="text-slate-200">WAVE ON</span>은 청춘의 에너지와
+							진짜 울림을 믿는 <br className="md:hidden" />
+							<span className="text-slate-200">문화예술 크루</span>입니다.
 						</p>
 						<div className="flex gap-4">
 							<Link

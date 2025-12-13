@@ -1,7 +1,6 @@
 "use client";
 
 import FadeIn from "../ui/fade-in";
-import Link from "next/link";
 import { Palette, Users, Handshake, Download, Send } from "lucide-react";
 
 export default function InquiryOptions() {
@@ -9,7 +8,7 @@ export default function InquiryOptions() {
 		{
 			title: "아티스트로 참여하기",
 			description:
-				"WAVE는 음악뿐만 아니라 전시, 퍼포먼스 등 모든 예술 분야의 아티스트를 기다립니다.",
+				"WAVE ON은 음악뿐만 아니라 전시, 퍼포먼스 등 모든 예술 분야의 아티스트를 기다립니다.",
 			details: [
 				"자신의 작품 세계를 펼치고 싶은 예술가",
 				"음악, 미술, 미디어아트 등 장르 불문",
@@ -24,7 +23,7 @@ export default function InquiryOptions() {
 		{
 			title: "크루/스태프로 참여하기",
 			description:
-				"공연 기획, 운영, 기술 지원 등 WAVE의 멋진 파도를 함께 만들어갈 팀원을 모집합니다.",
+				"공연 기획, 운영, 기술 지원 등 WAVE ON의 멋진 파도를 함께 만들어갈 팀원을 모집합니다.",
 			details: [
 				"공연 기획 및 운영에 관심 있는 분",
 				"음향, 조명, 무대 예술 기술 스태프",
@@ -39,10 +38,10 @@ export default function InquiryOptions() {
 		{
 			title: "브랜드/기관 컬래버 제안",
 			description:
-				"WAVE와 함께 특별한 문화 이벤트를 기획하고 싶은 브랜드와 기관의 제안을 기다립니다.",
+				"WAVE ON과 함께 특별한 문화 이벤트를 기획하고 싶은 브랜드와 기관의 제안을 기다립니다.",
 			details: [
 				"브랜드 이미지를 높이는 문화 행사 기획",
-				"기관/지자체 축제 및 공연 프로그램 협력",
+				"기관/지자체 축제/공연 프로그램 협력",
 				"스폰서십 및 파트너십 문의",
 			],
 			actionLabel: "공식 메일로 제안서 보내기",
@@ -66,21 +65,20 @@ export default function InquiryOptions() {
 									<option.icon size={28} />
 								</div>
 
-								<h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+								<h3 className="text-[1.35rem] md:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
 									{option.title}
 								</h3>
 
-								<p className="text-slate-400 mb-6 grow leading-relaxed">
+								<p className="px-4 text-start text-slate-400 mb-6 grow leading-relaxed">
 									{option.description}
 								</p>
 
-								<ul className="space-y-3 mb-8 text-sm text-slate-500">
+								<ul className="space-y-3 mb-8 text-xs md:text-sm text-slate-500 list-disc text-start pl-6">
 									{option.details.map((detail, idx) => (
-										<li key={idx} className="flex items-start gap-2.5">
-											<span
-												className={`w-1.5 h-1.5 rounded-full bg-${option.color}-500/50 mt-2 shrink-0`}
-											></span>
-											<span className="text-slate-400">{detail}</span>
+										<li key={idx}>
+											<span className="text-slate-400 text-start">
+												{detail}
+											</span>
 										</li>
 									))}
 								</ul>

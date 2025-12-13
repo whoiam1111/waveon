@@ -69,8 +69,9 @@ export default function Intro() {
 
 					<div className="space-y-8 text-lg md:text-2xl text-slate-200 font-light leading-relaxed">
 						<p>
-							“WAVE ON은 문화의 힘을 믿는 청춘들이 모여 만든,
-							<br className="hidden md:block" />
+							“WAVE ON은 문화의 힘을 믿는 <br className="md:hidden" />
+							청춘들이 모여 만든,
+							<br />
 							<span className="font-bold text-white relative inline-block mx-1">
 								예술과 상상력의 파도
 								<span className="absolute bottom-0 left-0 w-full h-[6px] bg-blue-500/30 -z-10 rounded-sm" />
@@ -80,7 +81,7 @@ export default function Intro() {
 						<p className="text-slate-400 text-base md:text-xl">
 							AI가 그림도 그리고 글도 쓰는 시대지만,
 							<br className="hidden md:block" />
-							우리는 여전히 사람 사이의
+							우리는 여전히 사람과 사람 사이의 <br className="md:hidden" />
 							<span className="text-cyan-300 font-medium mx-1">
 								찐한 무언가
 							</span>

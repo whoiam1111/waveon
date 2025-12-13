@@ -24,8 +24,9 @@ const activities = [
 				그들의 이야기를 무대로 확장합니다.
 				<br />
 				기술이 아무리 앞서도,{" "}
-				<span className="text-blue-200">진심·울림·사람냄새</span>는 인간의
-				언어이기 때문입니다.
+				<span className="text-blue-200">진심·울림·사람냄새</span>는
+				<br className="md:hidden" />
+				인간의 언어이기 때문입니다.
 			</>
 		),
 	},
@@ -33,7 +34,7 @@ const activities = [
 		title: "🔗 Connect",
 		content: (
 			<>
-				WAVE는 사람과 사람, 아티스트와 관객,
+				WAVE ON은 사람과 사람, 아티스트와 관객,
 				<br />
 				청춘과 세상을 이어주는 연결 구조를 만듭니다.
 				<br />
@@ -54,7 +55,7 @@ export default function WhatWeDo() {
 						What We Do
 					</h2>
 					<h3 className="text-3xl md:text-5xl font-bold text-white mb-6">
-						WAVE의 활동들
+						WAVE ON의 활동들
 					</h3>
 					<div className="h-px w-full bg-gradient-to-r from-blue-500/50 to-transparent" />
 				</FadeIn>

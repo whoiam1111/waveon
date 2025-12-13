@@ -29,10 +29,12 @@ export default function HeroSection() {
 
 				<FadeIn delay={0.2}>
 					<p className="text-2xl md:text-3xl font-bold mb-2 text-slate-100">
-						청춘의 파도를 타고, 문화를 흔들다.
+						청춘의 파도를 타고, <br className="md:hidden" />
+						문화를 흔들다.
 					</p>
 					<p className="text-slate-400 mb-10 max-w-lg mx-auto">
-						WAVE ON은 청춘의 에너지와 진짜 울림을 믿는 문화예술 크루입니다.
+						WAVE ON은 청춘의 에너지와 진짜 울림을 <br className="md:hidden" />
+						믿는 문화예술 크루입니다.
 					</p>
 				</FadeIn>
 

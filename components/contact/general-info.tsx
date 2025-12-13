@@ -21,12 +21,12 @@ export default function GeneralInfo() {
 							<h3 className="text-sm font-semibold tracking-widest text-cyan-400 mb-2 uppercase">
 								Contact Info
 							</h3>
-							<h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+							<h2 className="text-[1.65rem] md:text-4xl font-bold text-white mb-8">
 								더 궁금한 점이 있으신가요?
 							</h2>
 							<p className="text-slate-400 text-lg mb-6 leading-relaxed">
-								WAVE에 대해 더 알고 싶거나, 제휴 및 기타 문의사항이 있다면
-								언제든 편하게 연락주세요. 빠르게 확인 후 답변 드리겠습니다.
+								WAVE ON에 대해 더 알고 싶거나, 기타 문의사항이 있다면 언제든
+								편하게 연락주세요. 빠르게 확인 후 답변 드리겠습니다.
 							</p>
 							<p className="text-slate-400 flex items-center gap-2">
 								<AlarmClockCheck size={16} /> Office hour : 09:00 ~ 18:00
@@ -76,7 +76,7 @@ export default function GeneralInfo() {
 									</div>
 									<div>
 										<h4 className="text-white font-bold text-lg">Office</h4>
-										<p className="text-slate-400">
+										<p className="text-slate-400 tracking-tight">
 											서울특별시 노원구 화랑로 453, 5층
 										</p>
 									</div>

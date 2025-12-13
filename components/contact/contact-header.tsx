@@ -16,12 +16,13 @@ export default function ContactHeader() {
 						contact us
 					</h1>
 					<h1 className="text-4xl md:text-5xl font-bold text-white mb-6 md:mb-10 tracking-tight">
-						파도 위로 올라탈 준비 되셨나요?
+						파도 위로 올라탈 <br className="md:hidden" /> 준비 되셨나요?
 					</h1>
-					<p className="text-lg text-slate-400 max-w-2xl mx-auto">
-						새로운 파도를 함께 만들어갈 당신을 기다립니다.
-						<br className="hidden md:block" />
-						아티스트, 스태프, 그리고 파트너십까지 다양한 기회가 열려있습니다.
+					<p className="md:text-lg text-slate-400 max-w-2xl mx-auto">
+						새로운 파도를 함께 만들어갈 분을 기다립니다.
+						<br />
+						아티스트, 스태프, 그리고 파트너십까지 <br className="md:hidden" />
+						다양한 기회가 열려있습니다.
 					</p>
 					<div className="h-px w-24 bg-blue-500 mx-auto mt-8" />
 				</FadeIn>
