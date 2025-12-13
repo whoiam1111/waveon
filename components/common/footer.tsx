@@ -20,10 +20,13 @@ export default function Footer() {
 				<div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
 					{/* Logo & Description */}
 					<div className="col-span-1 md:col-span-1">
-						<Link href="/" className="inline-block mb-6 group">
-							<span className="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors">
+						<Link href="/" className="inline-block mb-2 group">
+							<div className="relative w-64 h-14 flex items-start justify-center">
+								<img src="/logo.png" alt="Wave Logo" />
+							</div>
+							{/* <span className="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors">
 								WAVE ON
-							</span>
+							</span> */}
 						</Link>
 						<p className="text-sm leading-relaxed mb-6">
 							청춘의 파도를 타고, 문화를 흔들다.

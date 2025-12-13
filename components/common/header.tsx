@@ -58,19 +58,14 @@ export default function Header() {
 						className="flex items-center gap-2 group"
 						onClick={closeMobileMenu}
 					>
-						<div className="relative w-24 h-10 overflow-hidden rounded-lg">
+						<div className="relative w-32 h-10 flex items-center justify-center">
 							{/* 실제 로고 파일이 있다면 src를 변경해주세요. 여기선 예시 플레이스홀더를 사용합니다. */}
-							<Image
+							<img
 								src="/logo_white.png" // public 폴더 내에 로고 파일 필요
 								alt="Wave Logo"
-								fill
 								className="object-cover opacity-90"
-								priority
 							/>
 						</div>
-						{/* <span className="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">
-						Wave
-					</span> */}
 					</Link>
 
 					{/* 2. 네비게이션 버튼 (데스크탑) */}
