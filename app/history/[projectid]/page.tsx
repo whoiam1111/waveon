@@ -16,7 +16,9 @@ import {
 } from "lucide-react";
 import { Project } from "@/types/project";
 import { useEvent } from "@/hooks/use-events";
-import { use, useEffect } from "react";
+import { use, useEffect, useState } from "react";
+import GalleryModal from "@/components/project/gallery-modal";
+import { AnimatePresence } from "motion/react";
 
 interface PageProps {
 	params: Promise<{
@@ -25,9 +27,11 @@ interface PageProps {
 }
 
 export default function ProjectDetailPage({ params }: PageProps) {
-	// Unwrap params using React.use()
 	const { projectid } = use(params);
 	const { data: rawProject, isLoading, error } = useEvent(projectid);
+	const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+		null
+	);
 
 	if (isLoading) {
 		return (
@@ -183,7 +187,8 @@ export default function ProjectDetailPage({ params }: PageProps) {
 								{eventPhotos.map((photo, idx) => (
 									<div
 										key={idx}
-										className="relative aspect-video rounded-xl overflow-hidden group"
+										className="relative aspect-video rounded-xl overflow-hidden group cursor-pointer"
+										onClick={() => setSelectedImageIndex(idx)}
 									>
 										<Image
 											src={photo}
@@ -191,6 +196,11 @@ export default function ProjectDetailPage({ params }: PageProps) {
 											fill
 											className="object-cover transition-transform duration-500 group-hover:scale-105"
 										/>
+										<div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+											<span className="text-white font-medium px-4 py-2 bg-black/50 backdrop-blur-sm rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+												크게 보기
+											</span>
+										</div>
 									</div>
 								))}
 							</div>
@@ -198,6 +208,16 @@ export default function ProjectDetailPage({ params }: PageProps) {
 					)}
 				</FadeIn>
 			</div>
+
+			<AnimatePresence>
+				{selectedImageIndex !== null && (
+					<GalleryModal
+						images={eventPhotos}
+						initialIndex={selectedImageIndex}
+						onClose={() => setSelectedImageIndex(null)}
+					/>
+				)}
+			</AnimatePresence>
 		</main>
 	);
 }
