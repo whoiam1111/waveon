@@ -5,17 +5,11 @@ import Image from "next/image";
 import { Project } from "@/types/project";
 import { ArrowUpRight } from "lucide-react";
 import { clsx } from "clsx";
+import { CATEGORY_COLORS } from "@/lib/constants";
 
 interface ProjectCardProps {
 	project: Project;
 }
-
-const CATEGORY_COLORS: Record<string, string> = {
-	테마카페: "bg-rose-500/90 text-white",
-	공연: "bg-violet-500/90 text-white",
-	"전시/상영": "bg-amber-500/90 text-white",
-	default: "bg-blue-600/90 text-white",
-};
 
 export default function ProjectCard({ project }: ProjectCardProps) {
 	const categoryColor =

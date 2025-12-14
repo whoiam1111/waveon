@@ -3,16 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "motion/react";
-
-// 네비게이션 항목 정의 (유지보수를 위해 배열로 관리)
-const NAV_ITEMS = [
-	{ label: "About", href: "/about" },
-	{ label: "프로젝트", href: "/project" },
-	{ label: "히스토리", href: "/history" },
-	{ label: "문의", href: "/contact" },
-];
+import MobileMenu from "./mobile-menu";
+import { NAV_ITEMS } from "@/lib/constants";
 
 export default function Header() {
 	const pathname = usePathname();
@@ -24,7 +16,6 @@ export default function Header() {
 		const handleScroll = () => {
 			// 스크롤이 10px 이상 내려가면 배경 스타일 변경
 			setIsScrolled(window.scrollY > 10);
-			// console.log(window.scrollY);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -136,41 +127,11 @@ export default function Header() {
 			</header>
 
 			{/* 모바일 메뉴 오버레이 및 사이드바 */}
-			<AnimatePresence>
-				{isMobileMenuOpen && (
-					<>
-						{/* 백드롭 (배경 어둡게 처리 & 클릭 시 닫기) */}
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.2 }}
-							className="fixed inset-0 bg-black/60 z-140 md:hidden"
-							onClick={closeMobileMenu}
-						/>
-
-						{/* 사이드바 (오른쪽에서 슬라이드) */}
-						<motion.div
-							initial={{ x: "100%" }}
-							animate={{ x: 0 }}
-							exit={{ x: "100%" }}
-							transition={{ type: "spring", damping: 25, stiffness: 200 }}
-							className="fixed top-0 right-0 h-full w-[70%] max-w-xs bg-neutral-900/95 backdrop-blur-xl z-150 flex flex-col items-center justify-center space-y-8 md:hidden border-l border-neutral-800 shadow-2xl"
-						>
-							{NAV_ITEMS.map((item) => (
-								<Link
-									key={item.label}
-									href={item.href}
-									onClick={closeMobileMenu}
-									className="text-xl font-medium text-slate-200 hover:text-cyan-400 transition-colors"
-								>
-									{item.label}
-								</Link>
-							))}
-						</motion.div>
-					</>
-				)}
-			</AnimatePresence>
+			<MobileMenu
+				isOpen={isMobileMenuOpen}
+				onClose={closeMobileMenu}
+				items={NAV_ITEMS}
+			/>
 		</>
 	);
 }

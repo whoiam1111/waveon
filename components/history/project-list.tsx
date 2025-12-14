@@ -4,7 +4,9 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Project } from "@/types/project";
 import ProjectCard from "./project-card";
 import FadeIn from "../ui/fade-in";
-import { SlidersHorizontal, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import ProjectToolbar from "./project-toolbar";
+import { useProjectFilter } from "@/hooks/use-project-filter";
 
 interface ProjectListProps {
 	initialProjects: Project[];
@@ -13,72 +15,23 @@ interface ProjectListProps {
 
 const ITEMS_PER_PAGE = 5;
 
-// Define filter categories
-const CATEGORIES = [
-	{ id: "all", label: "전체" },
-	{ id: "popup", label: "팝업" },
-	{ id: "performance", label: "공연" },
-	{ id: "etc", label: "기타" },
-];
-
 export default function ProjectList({
 	initialProjects,
 	initialCategory,
 }: ProjectListProps) {
-	const [sortOrder, setSortOrder] = useState<"latest" | "oldest">("latest");
-	// Initialize category from prop or default to 'all'
-	const [selectedCategory, setSelectedCategory] = useState<string>(
-		initialCategory || "all"
-	);
+	const {
+		selectedCategory,
+		setSelectedCategory,
+		sortOrder,
+		setSortOrder,
+		sortedProjects,
+	} = useProjectFilter(initialProjects, initialCategory);
+
 	const [visibleItems, setVisibleItems] = useState<number>(ITEMS_PER_PAGE);
 	const [isLoading, setIsLoading] = useState(false);
 
 	// Create an intersection observer ref
 	const observerTarget = useRef<HTMLDivElement>(null);
-
-	// Update selectedCategory if initialCategory changes
-	useEffect(() => {
-		if (initialCategory) {
-			setSelectedCategory(initialCategory);
-		}
-	}, [initialCategory]);
-
-	// No parsing needed as image_urls is already string[]
-	const parsedProjects = initialProjects;
-
-	// Filter projects
-	const filteredProjects = parsedProjects.filter((project) => {
-		if (selectedCategory === "all") return true;
-
-		const category = project.project_category || "";
-
-		if (selectedCategory === "popup") {
-			return (
-				category.includes("테마카페") ||
-				category === "POP-UP" ||
-				category.includes("전시")
-			);
-		}
-		if (selectedCategory === "performance") {
-			return category.includes("공연") || category.includes("축제");
-		}
-		if (selectedCategory === "etc") {
-			return (
-				!category.includes("테마카페") &&
-				category !== "POP-UP" &&
-				!category.includes("전시") &&
-				!category.includes("공연") &&
-				!category.includes("축제")
-			);
-		}
-		return true;
-	});
-
-	const sortedProjects = [...filteredProjects].sort((a, b) => {
-		const dateA = new Date(a.start_date!).getTime();
-		const dateB = new Date(b.start_date!).getTime();
-		return sortOrder === "latest" ? dateB - dateA : dateA - dateB;
-	});
 
 	const currentProjects = sortedProjects.slice(0, visibleItems);
 	const hasMore = visibleItems < sortedProjects.length;
@@ -123,43 +76,12 @@ export default function ProjectList({
 	return (
 		<div className="space-y-8 max-w-4xl mx-auto">
 			{/* Toolbar: Category on Left, Sort on Right */}
-			<div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-				{/* Category Filter Buttons */}
-				<div className="flex items-center gap-2 bg-slate-900/50 p-1.5 rounded-xl border border-slate-800">
-					{CATEGORIES.map((cat) => (
-						<button
-							key={cat.id}
-							onClick={() => setSelectedCategory(cat.id)}
-							className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-								selectedCategory === cat.id
-									? "bg-blue-600 text-white shadow-lg shadow-blue-900/30"
-									: "text-slate-400 hover:text-white hover:bg-slate-800"
-							}`}
-						>
-							{cat.label}
-						</button>
-					))}
-				</div>
-
-				{/* Sort Controls */}
-				<div className="flex items-center gap-3 bg-slate-900/50 p-1.5 rounded-lg border border-slate-800">
-					<SlidersHorizontal className="w-4 h-4 text-slate-400 ml-2" />
-					<select
-						value={sortOrder}
-						onChange={(e) =>
-							setSortOrder(e.target.value as "latest" | "oldest")
-						}
-						className="bg-transparent text-sm text-slate-200 border-none focus:ring-0 cursor-pointer pr-8 py-1"
-					>
-						<option value="latest" className="bg-slate-900">
-							최신순
-						</option>
-						<option value="oldest" className="bg-slate-900">
-							오래된순
-						</option>
-					</select>
-				</div>
-			</div>
+			<ProjectToolbar
+				selectedCategory={selectedCategory}
+				onSelectCategory={setSelectedCategory}
+				sortOrder={sortOrder}
+				onSortChange={setSortOrder}
+			/>
 
 			{/* List - Single Column */}
 			<div className="flex flex-col gap-6">
