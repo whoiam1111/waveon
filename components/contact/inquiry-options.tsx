@@ -1,9 +1,24 @@
 "use client";
 
 import FadeIn from "../ui/fade-in";
-import { Palette, Users, Handshake, Download, Send } from "lucide-react";
+import {
+	Palette,
+	Users,
+	Handshake,
+	Download,
+	Send,
+	Megaphone,
+} from "lucide-react";
 
 export default function InquiryOptions() {
+	const colorStyles: Record<string, string> = {
+		blue: "bg-blue-900/30 text-blue-400 group-hover:bg-blue-500 shadow-blue-900/20",
+		indigo:
+			"bg-indigo-900/30 text-indigo-400 group-hover:bg-indigo-500 shadow-indigo-900/20",
+		rose: "bg-rose-900/30 text-rose-400 group-hover:bg-rose-500 shadow-rose-900/20",
+		cyan: "bg-cyan-900/30 text-cyan-400 group-hover:bg-cyan-500 shadow-cyan-900/20",
+	};
+
 	const options = [
 		{
 			title: "아티스트로 참여하기",
@@ -36,6 +51,21 @@ export default function InquiryOptions() {
 			icon: Users,
 		},
 		{
+			title: "홍보마케팅 서포터즈 모집",
+			description:
+				"WAVE ON을 함께 알리고 만들어갈 열정적인 서포터즈를 찾습니다.",
+			details: [
+				"SNS, 유튜브 등 뉴미디어 이해도가 높은 분",
+				"온/오프라인 캠페인 참여 경험이 있는 분",
+				"문화예술 분야에 큰 관심 있는 분",
+			],
+			actionLabel: "링크로 신청하기",
+			link: "/files/supporters_application.pdf",
+			isDownload: false,
+			color: "rose",
+			icon: Megaphone,
+		},
+		{
 			title: "브랜드/기관 컬래버 제안",
 			description:
 				"WAVE ON과 함께 특별한 문화 이벤트를 기획하고 싶은 브랜드와 기관의 제안을 기다립니다.",
@@ -54,15 +84,17 @@ export default function InquiryOptions() {
 
 	return (
 		<section className="py-20 z-10">
-			<div className="max-w-5xl mx-auto w-full">
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div className="max-w-4xl mx-auto w-full">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					{options.map((option, index) => (
 						<FadeIn key={index} delay={index * 0.1}>
 							<div className="h-full bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:bg-slate-900 transition-all duration-300 group flex flex-col">
 								<div
-									className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center bg-${option.color}-900/30 text-${option.color}-400 group-hover:bg-${option.color}-500 group-hover:text-white transition-colors duration-300 shadow-lg shadow-${option.color}-900/20`}
+									className={`size-12 rounded-2xl mb-4 flex items-center justify-center group-hover:text-white transition-colors duration-300 shadow-lg ${
+										colorStyles[option.color]
+									}`}
 								>
-									<option.icon size={28} />
+									<option.icon size={20} />
 								</div>
 
 								<h3 className="text-[1.35rem] md:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
@@ -105,7 +137,7 @@ export default function InquiryOptions() {
 												${
 													option.color === "cyan"
 														? "bg-cyan-600 text-white hover:bg-cyan-500"
-														: "bg-slate-800 text-white"
+														: "bg-slate-800 text-white hover:bg-white hover:text-slate-900"
 												}
 											`}
 										>
