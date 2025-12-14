@@ -24,7 +24,8 @@ export default function JoinSection() {
 					<div className="flex flex-col md:flex-row gap-4 justify-center *:cursor-pointer">
 						<Link
 							href="/contact"
-							className="px-20 md:px-28 py-4 text-base md:text-lg bg-white text-blue-900 font-bold rounded-xl hover:bg-slate-200 transition-colors"
+							className="px-20 md:px-28 py-4 text-base md:text-lg bg-white text-blue-900 font-bold rounded-xl
+							 hover:bg-blue-100 hover:text-blue-700 transition-colors"
 						>
 							WAVE ON과 함께하기
 						</Link>

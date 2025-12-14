@@ -30,8 +30,6 @@ export default function CurrentWaves() {
 		return ongoing ? (ongoing as unknown as Project) : null;
 	}, [data]);
 
-	// If loading, maybe show skeleton or just return null for now to avoid layout shift?
-	// Or just let it render empty state until data comes.
 	if (isLoading) return null; // Or a loader
 
 	return (

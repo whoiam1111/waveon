@@ -1,5 +1,5 @@
 import FadeIn from "../ui/fade-in";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,7 +33,15 @@ export default function SignatureWaves() {
 			<div className="max-w-5xl mx-auto px-6 w-full">
 				<FadeIn>
 					<h2 className="text-4xl font-bold mb-4">Signature Waves</h2>
-					<p className="text-slate-400 mb-10">우리를 대표하는 프로젝트들</p>
+					<div className="flex flex-col md:flex-row items-start gap-2 md:gap-0 md:items-center md:justify-between mb-10">
+						<p className="text-slate-400">우리를 대표하는 프로젝트들</p>
+						<Link
+							href="/history"
+							className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+						>
+							모두보기 <ArrowRight size={18} />
+						</Link>
+					</div>
 				</FadeIn>
 
 				<div className="space-y-4">

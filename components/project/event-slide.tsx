@@ -77,7 +77,8 @@ export default function EventSlide({ project }: EventSlideProps) {
 					<div className="pt-6">
 						<Link
 							href={`/history/${project.uid}`}
-							className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-950 font-bold rounded-full hover:bg-blue-50 transition-colors duration-300"
+							className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-950 font-bold rounded-full 
+							hover:bg-blue-200 transition-colors duration-300"
 						>
 							<span>자세히보기</span>
 							<ArrowRight className="w-5 h-5" />
