@@ -102,8 +102,7 @@ export default function PrivacyPage() {
 						</p>
 						<ul className="list-disc pl-5 space-y-2 mt-4 text-slate-400">
 							<li>개인정보 보호책임자 : 운영팀</li>
-							<li>전화번호 : 02-123-4567</li>
-							<li>이메일 : officialwaveon@gmail.com</li>
+							<li>문의 : officialwaveon@gmail.com</li>
 						</ul>
 					</section>
 				</div>
