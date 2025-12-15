@@ -75,7 +75,7 @@ export default function InquiryOptions() {
 				"스폰서십 및 파트너십 문의",
 			],
 			actionLabel: "공식 메일로 제안서 보내기",
-			link: "mailto:contact@waveon.com",
+			link: "officialwaveon@gmail.com",
 			isDownload: false,
 			color: "cyan",
 			icon: Handshake,

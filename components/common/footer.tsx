@@ -85,12 +85,9 @@ export default function Footer() {
 								</li>
 								<li className="flex items-center gap-3">
 									<Mail size={20} className="text-blue-500 shrink-0" />
-									<a
-										href="mailto:contact@waveon.kr"
-										className="hover:text-blue-400 transition-colors"
-									>
-										contact@waveon.kr
-									</a>
+									<span className="hover:text-blue-400 transition-colors">
+										officialwaveon@gmail.com
+									</span>
 								</li>
 							</ul>
 						</div>

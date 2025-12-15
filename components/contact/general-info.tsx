@@ -43,12 +43,9 @@ export default function GeneralInfo() {
 								</div>
 								<div>
 									<h4 className="text-white font-bold text-lg">Email</h4>
-									<a
-										href="mailto:contact@waveon.com"
-										className="text-slate-400 hover:text-blue-400 transition-colors"
-									>
-										contact@waveon.com
-									</a>
+									<span className="text-slate-400 hover:text-blue-400 transition-colors">
+										officialwaveon@gmail.com
+									</span>
 								</div>
 							</div>
 
