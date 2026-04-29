@@ -121,15 +121,17 @@ export default function ProjectDetailPage({ params }: PageProps) {
 										<span>{project.project_time}</span>
 									</div>
 								)}
-								<div className="flex">
-									<Link
-										href={project.apply_url || "#"}
-										target="_blank"
-										className="px-20 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]"
-									>
-										신청하기
-									</Link>
-								</div>
+								{project.apply_url && (
+									<div className="flex">
+										<Link
+											href={project.apply_url || "#"}
+											target="_blank"
+											className="px-20 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]"
+										>
+											신청하기
+										</Link>
+									</div>
+								)}
 								{(project.manager || project.staff) && (
 									<div className="flex items-start gap-3">
 										<User className="w-5 h-5 text-blue-500 mt-1" />
