@@ -65,8 +65,6 @@ export default function ProjectDetailPage({ params }: PageProps) {
 	// Let's treat all as event photos.
 	const eventPhotos = project.image_urls || [];
 
-	console.log("project", project);
-
 	return (
 		<main className="min-h-screen bg-slate-950 pt-32 pb-24">
 			<div className="max-w-5xl mx-auto px-6 w-full">
