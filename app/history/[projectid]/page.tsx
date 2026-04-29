@@ -30,7 +30,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
 	const { projectid } = use(params);
 	const { data: rawProject, isLoading, error } = useEvent(projectid);
 	const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-		null
+		null,
 	);
 
 	if (isLoading) {
@@ -64,6 +64,8 @@ export default function ProjectDetailPage({ params }: PageProps) {
 	// User request example response: "image_urls": ["url1", "url2", ...]
 	// Let's treat all as event photos.
 	const eventPhotos = project.image_urls || [];
+
+	console.log("project", project);
 
 	return (
 		<main className="min-h-screen bg-slate-950 pt-32 pb-24">
@@ -119,6 +121,15 @@ export default function ProjectDetailPage({ params }: PageProps) {
 										<span>{project.project_time}</span>
 									</div>
 								)}
+								<div className="flex">
+									<Link
+										href={project.apply_url || "#"}
+										target="_blank"
+										className="px-20 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]"
+									>
+										신청하기
+									</Link>
+								</div>
 								{(project.manager || project.staff) && (
 									<div className="flex items-start gap-3">
 										<User className="w-5 h-5 text-blue-500 mt-1" />
@@ -150,17 +161,6 @@ export default function ProjectDetailPage({ params }: PageProps) {
 									>
 										<Youtube className="w-5 h-5" />
 										Watch Video
-									</a>
-								)}
-								{project.application_url && (
-									<a
-										href={project.application_url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors font-medium"
-									>
-										<LinkIcon className="w-5 h-5" />
-										View Link
 									</a>
 								)}
 							</div>
