@@ -79,10 +79,7 @@ export default function Footer() {
 						<div className="col-span-1 md:col-span-2">
 							<h3 className="text-white font-bold mb-6 text-lg">Contact Us</h3>
 							<ul className="space-y-4">
-								<li className="flex items-start gap-3">
-									<MapPin size={20} className="text-blue-500 shrink-0 mt-1" />
-									<span>서울특별시 노원구 화랑로 453, 5층</span>
-								</li>
+								
 								<li className="flex items-center gap-3">
 									<Mail size={20} className="text-blue-500 shrink-0" />
 									<span className="hover:text-blue-400 transition-colors">
